@@ -1,0 +1,33 @@
+<div class="container" style="margin-top: 50px;">
+    <div class="row">
+        <h2 class="col-sm-6">List of products</h2>
+        <div class="col-sm-6 text-right">
+            <button (click)="addProduct($event)">Add New Product</button>
+        </div>
+    </div>
+    <hr/>
+    <div class="row" *ngFor="let product of products; let i = index">
+        <div class="col-sm-1">
+            {{product.id}}
+        </div>
+        <div class="col-sm-2">
+            {{product.name}}
+        </div>
+        <div class="col-sm-1">
+            {{product.price}}
+        </div>
+        <div class="col-sm-2">
+            {{product.description}}
+        </div>
+        <div class="col-sm-1">
+            <a href="#" (click)="editProduct($event, product.id)">
+                <i class="fa fa-pencil"> Edit</i>
+            </a>
+        </div>
+        <div class="col-sm-2">
+            <a href="#" (click)="deleteProduct($event, product.id)">
+                <i class="fa fa-times"> Remove</i>
+            </a>
+        </div>
+    </div>
+</div>
