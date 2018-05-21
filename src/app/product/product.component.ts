@@ -56,5 +56,6 @@ export class ProductComponent implements OnInit {
   deleteProduct(event: any, id: number) {
     event.preventDefault();
     ProductService.remove(id);
+    this.reloadGrid();
   }
 }

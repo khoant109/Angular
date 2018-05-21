@@ -36,10 +36,11 @@ export class ProductService {
   }
 
   public static edit(product: Product) {
-    this.products.forEach((item: Product) => {
+    this.products = this.products.map((item: Product) => {
       if (product.id === item.id) {
         item = new Product(product.id, product.name, product.price, product.description);
       }
+      return item;
     });
   }
 
